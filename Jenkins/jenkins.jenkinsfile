@@ -1,15 +1,10 @@
 pipeline {
-    agent any
-
+    agent { any }
     stages {
-        stage ('Compile Stage') {
-
+        stage('build') {
             steps {
-                def mvnTool = tool 'maven_3.8_3'
-
-				// execute maven
-				sh "${mvnTool}/bin/mvn clean" 
-            }
+                sh 'mvn --version'
+             }
         }
-}
+    }
 }
